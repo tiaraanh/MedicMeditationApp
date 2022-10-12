@@ -8,6 +8,7 @@
 import UIKit
 
 class RecommendedViewCell: UICollectionViewCell {
+ 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     

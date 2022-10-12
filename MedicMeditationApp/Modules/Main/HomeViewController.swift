@@ -9,15 +9,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
+    weak var recommendedListView: UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
-        
-        
         setup()
     }
     
@@ -28,8 +25,6 @@ class HomeViewController: UIViewController {
         
     }
 }
-
-
 
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
@@ -45,13 +40,8 @@ extension HomeViewController: UICollectionViewDataSource {
     
     // amount of item in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionView {
-            if section == 0 {
-                return 4
-            } else {
-                return 1
-            }
-
+        if section == 0 {
+            return 4
         } else {
             return 2
         }
@@ -60,45 +50,55 @@ extension HomeViewController: UICollectionViewDataSource {
     // to show the item at section
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        if collectionView == self.collectionView {
+        if collectionView != self.collectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommended", for: indexPath) as! RecommendedViewCell
 
             let item = indexPath.item
-            cell.imageView.image = item == 0 ? UIImage(named: "Calm") : UIImage(named: "Relax")
-            cell.titleLabel.text = item == 0 ? "Calm" : "Relax"
+            var imageView = cell.imageView.image
+            
+            if item == 0 {
+                imageView = UIImage(named: "Calm")
+            } else if item == 1 {
+                imageView = UIImage(named: "Relax")
+            } else if item == 2 {
+                imageView = UIImage(named: "Focus")
+            } else if item == 3 {
+                imageView = UIImage(named: "Anxious")
+            }
 
             return cell
 
         } else {
 
         // section 1 recommendedList
-        if indexPath.section == 0 {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendedList", for: indexPath) as! RecommendedListViewCell
-
-            cell.backgroundColor = .clear
-
-            // collectionView to provide data
-            cell.collectionView.dataSource = self
-            cell.collectionView.delegate = self
-
-            return cell
-
+            if indexPath.section == 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendedList", for: indexPath) as! RecommendedListViewCell
+                
+                cell.backgroundColor = .clear
+                
+                self.recommendedListView = cell.collectionView
+                // collectionView to provide data
+                cell.collectionView.dataSource = self
+                cell.collectionView.delegate = self
+                
+                return cell
+                
         // section 2 HomeItemViewCell
-        } else {
-            let cells = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as! HomeItemViewCell
-
-            let item = indexPath.item
-            cells.backgroundImageView.backgroundColor = item == 0 ? UIColor.red : UIColor.blue
-            cells.titleLabel.text = item == 0 ? "Meditation 101" : "Cardio Meditation"
-            cells.subtitleLabel.text = item == 0 ? "Techniques, Benefits, and a Beginner’s How-To" : "Basics of Yoga for Beginners or Experienced Professionals"
-            cells.imageView.image = item == 0 ? UIImage(named: "meditation 101") : UIImage(named: "Cardio Meditation")
-
-            return cells
-
+            } else {
+                let cells = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as! HomeItemViewCell
+                
+                let item = indexPath.item
+                
+                cells.titleLabel.text = item == 0 ? "Meditation 101" : "Cardio Meditation"
+                cells.subtitleLabel.text = item == 0 ? "Techniques, Benefits, and a Beginner’s How-To" : "Basics of Yoga for Beginners or Experienced Professionals"
+                cells.imageView.image = item == 0 ? UIImage(named: "meditation-101") : UIImage(named: "cardio-meditation")
+                
+                return cells
+                
+            }
+            
         }
-
-    }
-
+        
     }
 
     // func for header
@@ -122,7 +122,6 @@ extension HomeViewController: UICollectionViewDataSource {
 
         }
 
-
         return view
     }
 
@@ -133,10 +132,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
     // size inset for each section
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if collectionView == self.collectionView {
-            return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+//        if collectionView == self.collectionView {
+        if section == 0 {
+            return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         } else {
-            return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+            return UIEdgeInsets(top: 10, left: 20, bottom: 20, right: 20)
         }
 
     }
@@ -154,31 +154,26 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     // size of item
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        if collectionView == self.collectionView {
-            return CGSize(width: 65, height: 99)
-
+        // section 2
+        if indexPath.section != 0 {
+            let screenwidth = UIScreen.main.bounds.width
+            return CGSize(width: screenwidth, height: 180)
         } else {
-
-            if indexPath.section == 0 {
-                let screenwidth = UIScreen.main.bounds.width
-                return CGSize(width: screenwidth, height: 68)
-
-            } else {
-                let leftInset: CGFloat = 20.0
-                let rightInset: CGFloat = 20.0
-                let itemSpacing: CGFloat = 20.0
-                let colomn: CGFloat = 2
-
-                let screenwidth = UIScreen.main.bounds.width
-                let width = ((screenwidth - (leftInset + rightInset + (itemSpacing * (colomn - 1)))) / colomn)
-                let height = 350 / 186 * width
-                return CGSize(width: width, height: height)
-            }
+            // section 1
+            let leftInset: CGFloat = 20.0
+            let rightInset: CGFloat = 20.0
+            
+            let screenwidth = UIScreen.main.bounds.width
+            let width = screenwidth - (leftInset + rightInset)
+            let height = 120.0
+            return CGSize(width: width, height: height)
+            
         }
-
+        
     }
-
+    
 }
+
 
 
     
