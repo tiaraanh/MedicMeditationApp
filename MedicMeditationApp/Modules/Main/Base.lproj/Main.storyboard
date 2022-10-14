@@ -115,24 +115,24 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="item" id="yi5-t9-Igf" customClass="HomeItemViewCell" customModule="MedicMeditationApp" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="248" width="350" height="186"/>
+                                        <rect key="frame" x="26" y="248" width="362" height="186"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HpU-06-YIA">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="186"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="362" height="186"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5iY-CG-0IF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="186"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="362" height="186"/>
                                                     <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation 101" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWm-cr-ubV">
-                                                    <rect key="frame" x="30" y="22" width="158" height="30"/>
+                                                    <rect key="frame" x="30" y="22" width="170" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Techniques, Benefits, and a Beginner’s How-To" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5j-55-5jp">
-                                                    <rect key="frame" x="30" y="62" width="200" height="40"/>
+                                                    <rect key="frame" x="30" y="62" width="212" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Gqj-3D-1H4"/>
                                                         <constraint firstAttribute="width" constant="200" id="fuz-Dt-SBD"/>
@@ -158,7 +158,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meditation-101" translatesAutoresizingMaskIntoConstraints="NO" id="Iuu-VV-joS">
-                                                    <rect key="frame" x="179" y="30" width="166" height="111"/>
+                                                    <rect key="frame" x="191" y="30" width="166" height="111"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -181,6 +181,7 @@
                                                 <constraint firstItem="5iY-CG-0IF" firstAttribute="leading" secondItem="HpU-06-YIA" secondAttribute="leading" id="yoF-Y8-57Y"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="362" height="186"/>
                                         <connections>
                                             <outlet property="backgroundImageView" destination="5iY-CG-0IF" id="zT3-DD-SZU"/>
                                             <outlet property="imageView" destination="Iuu-VV-joS" id="UE8-lq-2v8"/>
@@ -195,16 +196,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-uY-fqL">
-                                            <rect key="frame" x="28" y="11" width="358" height="42"/>
+                                            <rect key="frame" x="28" y="11" width="366" height="42"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qK-df-XnL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFO-CK-9sc">
-                                                    <rect key="frame" x="0.0" y="24" width="358" height="18"/>
+                                                    <rect key="frame" x="0.0" y="24" width="366" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -214,7 +215,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="c3O-uY-fqL" firstAttribute="leading" secondItem="b2O-zU-okK" secondAttribute="leadingMargin" constant="20" id="CCA-8e-mT9"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="c3O-uY-fqL" secondAttribute="trailing" constant="20" id="Z8i-jm-T7D"/>
+                                        <constraint firstAttribute="trailing" secondItem="c3O-uY-fqL" secondAttribute="trailing" constant="20" id="Z8i-jm-T7D"/>
                                         <constraint firstItem="c3O-uY-fqL" firstAttribute="centerY" secondItem="b2O-zU-okK" secondAttribute="centerY" id="eTc-r6-tXs"/>
                                     </constraints>
                                 </collectionReusableView>
@@ -223,10 +224,10 @@
                         <viewLayoutGuide key="safeArea" id="vds-3M-fyI"/>
                         <color key="backgroundColor" red="0.14901961389999999" green="0.2588235438" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="dKp-Gs-0jN" firstAttribute="leading" secondItem="vds-3M-fyI" secondAttribute="leading" id="28I-LG-Hkr"/>
+                            <constraint firstItem="dKp-Gs-0jN" firstAttribute="leading" secondItem="awF-Ac-4dn" secondAttribute="leading" id="28I-LG-Hkr"/>
                             <constraint firstItem="dKp-Gs-0jN" firstAttribute="top" secondItem="awF-Ac-4dn" secondAttribute="top" id="GVA-dM-gQk"/>
                             <constraint firstAttribute="bottom" secondItem="dKp-Gs-0jN" secondAttribute="bottom" id="sn4-cq-XK8"/>
-                            <constraint firstItem="dKp-Gs-0jN" firstAttribute="trailing" secondItem="vds-3M-fyI" secondAttribute="trailing" id="w3C-UO-bTn"/>
+                            <constraint firstItem="dKp-Gs-0jN" firstAttribute="trailing" secondItem="awF-Ac-4dn" secondAttribute="trailing" id="w3C-UO-bTn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2EZ-9P-RWa">
@@ -257,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSf-JG-eoc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173.913043478261" y="-334.15178571428572"/>
+            <point key="canvasLocation" x="1557.9710144927537" y="-334.15178571428572"/>
         </scene>
         <!-- -->
         <scene sceneID="EgN-7L-0tP">
