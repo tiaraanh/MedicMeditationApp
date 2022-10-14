@@ -141,9 +141,6 @@ extension HomeViewController: UICollectionViewDataSource {
 //            // Replace desiredSize with the size of the visible header
         }
     
-    
-    
-}
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
