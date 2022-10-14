@@ -11,13 +11,19 @@ class HomeViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     weak var recommendedListView: UICollectionView?
     
+    var moods: [Mood] = [
+        Mood(name: "Calm", thumbnails: "Calm"),
+        Mood(name: "Relax", thumbnails: "Relax"),
+        Mood(name: "Focus", thumbnails: "Focus"),
+        Mood(name: "Anxious", thumbnails: "Anxious")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setup()
     }
-    
     
     func setup() {
         collectionView.dataSource = self
@@ -40,31 +46,32 @@ extension HomeViewController: UICollectionViewDataSource {
     
     // amount of item in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 4
+        if collectionView == self.collectionView {
+            if section == 0 {
+                return 1
+            } else {
+                return 2
+            }
         } else {
-            return 2
+            return 4
+               
+            }
+            
         }
-    }
-    
+        
+        
     // to show the item at section
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         if collectionView != self.collectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommended", for: indexPath) as! RecommendedViewCell
 
-            let item = indexPath.item
-            var imageView = cell.imageView.image
+            let mood = moods[indexPath.row]
             
-            if item == 0 {
-                imageView = UIImage(named: "Calm")
-            } else if item == 1 {
-                imageView = UIImage(named: "Relax")
-            } else if item == 2 {
-                imageView = UIImage(named: "Focus")
-            } else if item == 3 {
-                imageView = UIImage(named: "Anxious")
-            }
+            cell.imageView.image = UIImage(named: mood.thumbnails) 
+            cell.titleLabel.text = mood.name
+            
+
 
             return cell
 
@@ -92,6 +99,8 @@ extension HomeViewController: UICollectionViewDataSource {
                 cells.titleLabel.text = item == 0 ? "Meditation 101" : "Cardio Meditation"
                 cells.subtitleLabel.text = item == 0 ? "Techniques, Benefits, and a Beginner’s How-To" : "Basics of Yoga for Beginners or Experienced Professionals"
                 cells.imageView.image = item == 0 ? UIImage(named: "meditation-101") : UIImage(named: "cardio-meditation")
+                
+                cells.delegate = self
                 
                 return cells
                 
@@ -132,15 +141,17 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
     // size inset for each section
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        if collectionView == self.collectionView {
+        if collectionView == self.collectionView {
         if section == 0 {
-            return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+            return UIEdgeInsets(top: 20, left: 30, bottom: 20, right: 30)
         } else {
-            return UIEdgeInsets(top: 10, left: 20, bottom: 20, right: 20)
+            return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         }
 
+        } else {
+            return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        }
     }
-    
     // space size for each item in section
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 20
@@ -154,26 +165,44 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     // size of item
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
+        if collectionView == self.recommendedListView {
+            return CGSize(width: 65, height: 99)
+        } else {
         // section 2
         if indexPath.section != 0 {
             let screenwidth = UIScreen.main.bounds.width
             return CGSize(width: screenwidth, height: 180)
         } else {
             // section 1
-            let leftInset: CGFloat = 20.0
-            let rightInset: CGFloat = 20.0
+            let leftInset: CGFloat = 10.0
+            let rightInset: CGFloat = 10.0
             
             let screenwidth = UIScreen.main.bounds.width
             let width = screenwidth - (leftInset + rightInset)
             let height = 120.0
             return CGSize(width: width, height: height)
-            
+        }
         }
         
     }
     
 }
 
+// MARK: -HomeItemViewCellDelegate
+extension HomeViewController: HomeItemViewCellDelegate {
+    func homeItemViewCellPlayButtonTapped(_ cell: HomeItemViewCell) {
+        
+        // to use modal
+         presentPlayerViewController()
+        
+        // to use push
+        // only when implement navigation controller
+//        showPlayerViewController()
+    }
+}
+
+    
+    
 
 
     

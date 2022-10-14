@@ -41,20 +41,20 @@
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.25882352941176467" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uAj-XO-bku">
                                     <size key="itemSize" width="410" height="186"/>
-                                    <size key="headerReferenceSize" width="50" height="82"/>
+                                    <size key="headerReferenceSize" width="50" height="64"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recommendedList" id="5ed-ZZ-tzd" customClass="RecommendedListViewCell" customModule="MedicMeditationApp" customModuleProvider="target">
-                                        <rect key="frame" x="2" y="82" width="410" height="186"/>
+                                        <rect key="frame" x="1" y="64" width="412" height="174"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Zh1-3Q-iu7">
-                                            <rect key="frame" x="0.0" y="0.0" width="410" height="186"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="174"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Un8-3K-3JR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="410" height="186"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="412" height="174"/>
                                                     <color key="backgroundColor" red="0.14901960784313725" green="0.25882352941176467" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cXv-6b-VNB">
                                                         <size key="itemSize" width="63" height="99"/>
@@ -64,7 +64,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recommended" id="rJp-XL-igo" customClass="RecommendedViewCell" customModule="MedicMeditationApp" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="43.5" width="65" height="99"/>
+                                                            <rect key="frame" x="0.0" y="37.5" width="65" height="99"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EBm-qM-c4Z">
                                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="99"/>
@@ -109,13 +109,13 @@
                                                 <constraint firstItem="Un8-3K-3JR" firstAttribute="leading" secondItem="Zh1-3Q-iu7" secondAttribute="leading" id="e8Z-aI-aTw"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="410" height="186"/>
+                                        <size key="customSize" width="412" height="174"/>
                                         <connections>
                                             <outlet property="collectionView" destination="Un8-3K-3JR" id="o7s-hF-ykJ"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="item" id="yi5-t9-Igf" customClass="HomeItemViewCell" customModule="MedicMeditationApp" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="278" width="350" height="186"/>
+                                        <rect key="frame" x="32" y="248" width="350" height="186"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HpU-06-YIA">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="186"/>
@@ -153,6 +153,9 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="play now">
                                                         <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="playButtonTapped:" destination="yi5-t9-Igf" eventType="touchUpInside" id="kPD-TQ-hnq"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meditation-101" translatesAutoresizingMaskIntoConstraints="NO" id="Iuu-VV-joS">
                                                     <rect key="frame" x="179" y="30" width="166" height="111"/>
@@ -187,22 +190,22 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="r9Q-Dw-QoU">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="b2O-zU-okK">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="CXz-eE-lvI">
-                                            <rect key="frame" x="20" y="7" width="374" height="68"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-uY-fqL">
+                                            <rect key="frame" x="28" y="11" width="358" height="42"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" text="Welcome Back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21C-UP-X8U">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="37.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qK-df-XnL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b99-nL-dZe">
-                                                    <rect key="frame" x="0.0" y="41.5" width="374" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFO-CK-9sc">
+                                                    <rect key="frame" x="0.0" y="24" width="358" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -210,10 +213,9 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="CXz-eE-lvI" secondAttribute="trailing" constant="20" id="5X3-VP-I0y"/>
-                                        <constraint firstAttribute="bottom" secondItem="CXz-eE-lvI" secondAttribute="bottom" constant="7" id="882-GK-LHk"/>
-                                        <constraint firstItem="CXz-eE-lvI" firstAttribute="centerY" secondItem="r9Q-Dw-QoU" secondAttribute="centerY" id="o6d-Qg-Q5O"/>
-                                        <constraint firstItem="CXz-eE-lvI" firstAttribute="leading" secondItem="r9Q-Dw-QoU" secondAttribute="leading" constant="20" id="zUM-j0-Lt7"/>
+                                        <constraint firstItem="c3O-uY-fqL" firstAttribute="leading" secondItem="b2O-zU-okK" secondAttribute="leadingMargin" constant="20" id="CCA-8e-mT9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="c3O-uY-fqL" secondAttribute="trailing" constant="20" id="Z8i-jm-T7D"/>
+                                        <constraint firstItem="c3O-uY-fqL" firstAttribute="centerY" secondItem="b2O-zU-okK" secondAttribute="centerY" id="eTc-r6-tXs"/>
                                     </constraints>
                                 </collectionReusableView>
                             </collectionView>

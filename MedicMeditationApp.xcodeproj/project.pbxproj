@@ -20,6 +20,9 @@
 		944C71B428F3F73400903274 /* RecommendedListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C71B328F3F73400903274 /* RecommendedListViewCell.swift */; };
 		944C71B828F50E9000903274 /* HomeItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C71B728F50E9000903274 /* HomeItemViewCell.swift */; };
 		944C71C028F64A5200903274 /* RecommendedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C71BF28F64A5200903274 /* RecommendedViewCell.swift */; };
+		944C71C228F68B2D00903274 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C71C128F68B2D00903274 /* Mood.swift */; };
+		944C71C528F744E300903274 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944C71C428F744E300903274 /* Player.storyboard */; };
+		944C71C728F744FF00903274 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C71C628F744FF00903274 /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		944C71B328F3F73400903274 /* RecommendedListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedListViewCell.swift; sourceTree = "<group>"; };
 		944C71B728F50E9000903274 /* HomeItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemViewCell.swift; sourceTree = "<group>"; };
 		944C71BF28F64A5200903274 /* RecommendedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedViewCell.swift; sourceTree = "<group>"; };
+		944C71C128F68B2D00903274 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		944C71C428F744E300903274 /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		944C71C628F744FF00903274 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		944C71A428F33CBF00903274 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				944C71C328F744D000903274 /* Player */,
 				944C71A528F33CD100903274 /* Main */,
 				944C71A628F33D0400903274 /* Welcome */,
 			);
@@ -100,6 +107,7 @@
 				944C71AC28F3BCD500903274 /* MainViewController.swift */,
 				944C71AE28F3BD9F00903274 /* HomeViewController.swift */,
 				944C71B728F50E9000903274 /* HomeItemViewCell.swift */,
+				944C71C128F68B2D00903274 /* Mood.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -126,6 +134,15 @@
 				944C71B128F3C7EA00903274 /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		944C71C328F744D000903274 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				944C71C428F744E300903274 /* Player.storyboard */,
+				944C71C628F744FF00903274 /* PlayerViewController.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +205,7 @@
 			files = (
 				944C719D28F33C0B00903274 /* LaunchScreen.storyboard in Resources */,
 				944C71A828F33DBE00903274 /* Welcome.storyboard in Resources */,
+				944C71C528F744E300903274 /* Player.storyboard in Resources */,
 				944C719A28F33C0B00903274 /* Assets.xcassets in Resources */,
 				944C719828F33C0900903274 /* Main.storyboard in Resources */,
 			);
@@ -200,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				944C71C228F68B2D00903274 /* Mood.swift in Sources */,
 				944C71AF28F3BD9F00903274 /* HomeViewController.swift in Sources */,
 				944C71C028F64A5200903274 /* RecommendedViewCell.swift in Sources */,
 				944C71AB28F3B07700903274 /* WelcomeViewController.swift in Sources */,
@@ -208,6 +227,7 @@
 				944C719328F33C0900903274 /* SceneDelegate.swift in Sources */,
 				944C71B828F50E9000903274 /* HomeItemViewCell.swift in Sources */,
 				944C71AD28F3BCD500903274 /* MainViewController.swift in Sources */,
+				944C71C728F744FF00903274 /* PlayerViewController.swift in Sources */,
 				944C71B428F3F73400903274 /* RecommendedListViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
