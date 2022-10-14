@@ -121,18 +121,27 @@ extension HomeViewController: UICollectionViewDataSource {
         if indexPath.section == 0 {
             titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
             titleLabel.text = "Welcome Back!"
-            subtitleLabel.isHidden = false
+            titleLabel.isHidden = false
             subtitleLabel.text = "How are you feeling today ?"
+            subtitleLabel.isHidden = false
         } else {
             titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .light)
             titleLabel.isHidden = true
             subtitleLabel.isHidden = true
-            titleLabel.text = "How are you feeling today ?"
-
+            
+            
         }
 
         return view
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
+////           // Shows only the header of the third section
+//        return section == 1 ?  CGSize(width: view.frame.size.width, height: 42) : .zero
+//            // Replace desiredSize with the size of the visible header
+        }
+    
+    
     
 }
 
