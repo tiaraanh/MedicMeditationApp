@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -41,13 +42,13 @@
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.25882352941176467" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uAj-XO-bku">
                                     <size key="itemSize" width="410" height="186"/>
-                                    <size key="headerReferenceSize" width="50" height="64"/>
+                                    <size key="headerReferenceSize" width="50" height="95"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recommendedList" id="5ed-ZZ-tzd" customClass="RecommendedListViewCell" customModule="MedicMeditationApp" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="64" width="412" height="174"/>
+                                        <rect key="frame" x="1" y="95" width="412" height="174"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Zh1-3Q-iu7">
                                             <rect key="frame" x="0.0" y="0.0" width="412" height="174"/>
@@ -115,7 +116,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="item" id="yi5-t9-Igf" customClass="HomeItemViewCell" customModule="MedicMeditationApp" customModuleProvider="target">
-                                        <rect key="frame" x="26" y="248" width="362" height="186"/>
+                                        <rect key="frame" x="26" y="279" width="362" height="186"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HpU-06-YIA">
                                             <rect key="frame" x="0.0" y="0.0" width="362" height="186"/>
@@ -192,31 +193,35 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="b2O-zU-okK">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-uY-fqL">
-                                            <rect key="frame" x="28" y="5" width="366" height="54"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="48k-n6-evX">
+                                            <rect key="frame" x="28" y="18" width="358" height="59"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qK-df-XnL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                                    <color key="textColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back, Tiara!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pk-Pr-dfF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="ldO-Ig-8N3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                    <color key="textColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFO-CK-9sc">
-                                                    <rect key="frame" x="0.0" y="30" width="366" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJ9-zB-DNY">
+                                                    <rect key="frame" x="0.0" y="30" width="358" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="c3O-uY-fqL" firstAttribute="leading" secondItem="b2O-zU-okK" secondAttribute="leadingMargin" constant="20" id="CCA-8e-mT9"/>
-                                        <constraint firstAttribute="trailing" secondItem="c3O-uY-fqL" secondAttribute="trailing" constant="20" id="Z8i-jm-T7D"/>
-                                        <constraint firstItem="c3O-uY-fqL" firstAttribute="centerY" secondItem="b2O-zU-okK" secondAttribute="centerY" id="eTc-r6-tXs"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="48k-n6-evX" secondAttribute="bottom" constant="10" id="RMD-5U-wMi"/>
+                                        <constraint firstItem="48k-n6-evX" firstAttribute="leading" secondItem="b2O-zU-okK" secondAttribute="leadingMargin" constant="20" id="bmj-WN-tgG"/>
+                                        <constraint firstItem="48k-n6-evX" firstAttribute="top" secondItem="b2O-zU-okK" secondAttribute="topMargin" constant="10" id="l2e-6N-yVp"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="48k-n6-evX" secondAttribute="trailing" constant="20" id="nww-Vi-lKx"/>
                                     </constraints>
                                 </collectionReusableView>
                             </collectionView>
@@ -236,12 +241,13 @@
                             <rect key="frame" x="207" y="22" width="0.0" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face.smiling.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="D4e-OO-lt7">
-                                    <rect key="frame" x="-15" y="-14.5" width="30" height="29"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="D4e-OO-lt7">
+                                    <rect key="frame" x="-50" y="-50" width="100" height="100"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="D4e-OO-lt7" secondAttribute="height" multiplier="1:1" id="CsN-em-vsX"/>
-                                        <constraint firstAttribute="height" constant="30" id="JEx-TV-fZs"/>
+                                        <constraint firstAttribute="height" constant="100" id="JEx-TV-fZs"/>
+                                        <constraint firstAttribute="width" constant="100" id="yMU-aE-PBI"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
@@ -305,7 +311,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="srR-ht-KMt">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -320,10 +326,10 @@
     </scenes>
     <resources>
         <image name="Calm" width="62" height="65"/>
+        <image name="Logo" width="375" height="439"/>
         <image name="Profile" width="18" height="22"/>
         <image name="Sounds" width="22" height="20"/>
-        <image name="face.smiling.fill" catalog="system" width="128" height="121"/>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house" catalog="system" width="128" height="104"/>
         <image name="meditation-101" width="166" height="111"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

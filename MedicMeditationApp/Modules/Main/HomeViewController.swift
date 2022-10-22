@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
 
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
-
+    
     // amount of section
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if collectionView == self.collectionView {
@@ -54,30 +54,30 @@ extension HomeViewController: UICollectionViewDataSource {
             }
         } else {
             return 4
-               
-            }
             
         }
         
-        
+    }
+    
+    
     // to show the item at section
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         if collectionView != self.collectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommended", for: indexPath) as! RecommendedViewCell
-
+            
             let mood = moods[indexPath.row]
             
-            cell.imageView.image = UIImage(named: mood.thumbnails) 
+            cell.imageView.image = UIImage(named: mood.thumbnails)
             cell.titleLabel.text = mood.name
             
-
-
+            
+            
             return cell
-
+            
         } else {
-
-        // section 1 recommendedList
+            
+            // section 1 recommendedList
             if indexPath.section == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendedList", for: indexPath) as! RecommendedListViewCell
                 
@@ -90,7 +90,7 @@ extension HomeViewController: UICollectionViewDataSource {
                 
                 return cell
                 
-        // section 2 HomeItemViewCell
+                // section 2 HomeItemViewCell
             } else {
                 let cells = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as! HomeItemViewCell
                 
@@ -109,38 +109,47 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         
     }
-
+    
     // func for header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-
+        
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
-
+        
         let titleLabel = view.viewWithTag(100) as! UILabel
         let subtitleLabel = view.viewWithTag(101) as! UILabel
-
+        
         if indexPath.section == 0 {
             titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-            titleLabel.text = "Welcome Back!"
+            titleLabel.text = "Welcome Back, Tiara!"
             titleLabel.isHidden = false
             subtitleLabel.text = "How are you feeling today ?"
             subtitleLabel.isHidden = false
         } else {
-            titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .light)
+            titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .light)
             titleLabel.isHidden = true
             subtitleLabel.isHidden = true
             
             
         }
-
+        
         return view
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
-////           // Shows only the header of the third section
-//        return section == 1 ?  CGSize(width: view.frame.size.width, height: 42) : .zero
-//            // Replace desiredSize with the size of the visible header
-        }
     
+    // to hide second header
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
+        if collectionView == self.recommendedListView {
+            return .zero
+        } else {
+            if section == 0 {
+                return CGSize(width: 50, height: 100)
+            } else {
+                return .zero
+            }
+        }
+        
+    }
+}
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
@@ -149,13 +158,13 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == self.collectionView {
         if section == 0 {
-            return UIEdgeInsets(top: 20, left: 30, bottom: 20, right: 30)
+            return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         } else {
-            return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+            return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         }
 
         } else {
-            return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+            return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         }
     }
     // space size for each item in section
