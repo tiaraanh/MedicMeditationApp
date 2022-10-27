@@ -127,7 +127,7 @@
                                                     <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation 101" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWm-cr-ubV">
-                                                    <rect key="frame" x="30" y="22" width="170" height="30"/>
+                                                    <rect key="frame" x="30" y="22" width="232" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -178,7 +178,7 @@
                                                 <constraint firstItem="FWm-cr-ubV" firstAttribute="top" secondItem="HpU-06-YIA" secondAttribute="top" constant="22" id="qYf-iy-MEo"/>
                                                 <constraint firstItem="a5j-55-5jp" firstAttribute="top" secondItem="FWm-cr-ubV" secondAttribute="bottom" constant="10" id="rhQ-Bl-9gS"/>
                                                 <constraint firstAttribute="trailing" secondItem="a5j-55-5jp" secondAttribute="trailing" constant="120" id="wMi-7z-6ba"/>
-                                                <constraint firstAttribute="trailing" secondItem="FWm-cr-ubV" secondAttribute="trailing" constant="162" id="wjs-Kp-L6k"/>
+                                                <constraint firstAttribute="trailing" secondItem="FWm-cr-ubV" secondAttribute="trailing" constant="100" id="wjs-Kp-L6k"/>
                                                 <constraint firstItem="5iY-CG-0IF" firstAttribute="leading" secondItem="HpU-06-YIA" secondAttribute="leading" id="yoF-Y8-57Y"/>
                                             </constraints>
                                         </collectionViewCellContentView>
